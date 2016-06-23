@@ -1,0 +1,240 @@
+.loanRequestDetail {
+    padding-bottom: 0;
+}
+#cameraPanel {
+   /* width: 810px!important;*/
+
+    /*margin-left: -405px!important;*/
+    top: 1%;
+    overflow-y: visible;
+}
+.camera {
+    width: 100%;
+}
+.center-align {
+    text-align: center;
+}
+.hide {
+    display: none;
+}
+#cameraPanel .form-actions {
+    border: none;
+}
+.form-actions {
+    text-align: center;
+}
+#chongpai {
+    margin-left: 10px;
+}
+#tupian {
+    width: 800px;
+    height: 600px;
+    margin-bottom: 5px;
+}
+#tupian-small {
+    width: 400px;
+    height: 300px;
+    border: 1px solid #f0f0f0;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+#video {
+    width: 800px;
+    height: 600px;
+}
+#uploadWithCamera, 
+#uploadLocally,
+#setCoverBtn {
+    margin-right: 10px;
+}
+.widget-main {
+    padding: 12px 0;
+}
+.form-actions {
+    margin: 0;
+}
+#cameraPanel .modal-body,
+#uploadFilePanel .modal-body,
+#localFilePanel .modal-body {
+    padding: 0;
+    max-height: 1000px;
+}
+#canvas {
+    margin-bottom: 5px;
+}
+#imageName,
+#fileDescription,
+#imageDescription2,
+#imageDescription {
+    width: 400px;
+}
+.help-block ul {
+    margin-top: 10px;
+}
+.help-block {
+    margin: 0!important;
+}
+#cancelUploadImageBtn {
+    margin-left: 10px;
+}
+#snapImage {
+    width: 200px;
+}
+.relative {
+    position: relative;
+}
+.load_masker {
+    background-color: rgba(255,255,255,0.5);
+    background-image: url('../img/loading.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.royalSlider {
+    width: 100%;
+}
+#sliderContainer {
+    overflow: visible;
+    padding: 0;
+    border: none;
+}
+.widget-header h4 {
+    float: left;
+    border-bottom: 0;
+}
+.alert-grey {
+    background: #f9f9f9;
+    border: 1px solid #f0f0f0;
+    color: #666;
+    padding: 8px 14px 8px 14px;
+}
+.title {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #478fca;
+}
+.split {
+    margin: 0 5px;
+    color: #bbb;
+}
+.description {
+    margin-top: 5px;
+}
+.loan-title  {
+    margin-right: 15px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #888;
+}
+#certificationContent {
+    /*min-height: 600px;*/
+    padding: 0 0 10px 20px;
+    border: none;
+    border-left: 1px solid #ddd;
+}
+#certificationDocuments {
+    margin-top: 15px;
+}
+.rsDefault .rsGCaption {
+    bottom: 0;
+    left:0;
+    text-align: center;
+}
+.rsDefault.rsFullscreen .rsGCaption {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    padding: 10px 0;
+}
+.ace-file-multiple {
+    padding: 20px;
+}
+#uploadFilePanel .control-label,
+#localFilePanel .control-label {
+    width: 80px;
+}
+#uploadFilePanel .controls,
+#localFilePanel .controls {
+    margin-left: 100px;
+}
+#uploadFilePanel .form-actions,
+#localFilePanel .form-actions {
+    padding-left: 0;
+    padding-right: 0;
+}
+#uploadFilePanel form,
+#localFilePanel form {
+    margin: 0;
+}
+#shenheList {
+    top: 220px;
+}
+#profileImage {
+    width: 100px;
+    height: auto;
+}
+#user {
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 120px;
+}
+#user h6 {
+    margin: 0;
+}
+#user h3 {
+    margin-bottom: 0;
+}
+#shenheList li a {
+    padding: 10px 10px 10px 10px;
+}
+
+#approvalIploadTabs li.active a {
+    color: #4383b4;
+}
+#certificationDocuments .profile-activity img {
+    border: none;
+    border-radius: 0;
+    max-width: 50px;
+    margin-right: 10px;
+    margin-left: 0;
+    box-shadow: none;
+}
+.download-link {
+    color:#999;
+    margin-left: 10px;
+    font-size: 12px;
+}
+.shenhetongguo {
+    margin: 0px 10px 0;
+}
+.shenhetongguo label {
+    margin: 0 5px;
+}
+.shenhetongguo input[type=radio] {
+    margin: 0;
+}
+.pingfen-input {
+    max-width: 60px; 
+}
+.descriptionPre {
+    height: auto!important;
+    white-space: pre-wrap;
+}
+
+/* for cover style */
+.rsThumbs span.thumbIco {
+    position: absolute;
+    padding: 5px;
+    left: 0;
+    background: rgba(3, 3, 3, 0.79);
+    display: none;
+    font-size: 18px;
+}
+.rsThumbs span.thumbIco i {
+}

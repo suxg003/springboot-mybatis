@@ -1,0 +1,186 @@
+.table thead tr{font-size:13px;}
+.datepicker{z-index:1200}
+
+
+/*设置字号*/
+.Font-15{font-size:15px!important;}
+.Font-16{font-size:16px!important;}
+.bold{font-weight:bold!important;}
+
+/*设置高度，行高*/
+.Line-Height-24{height:24px!important;line-height:24px!important;}
+.Line-Height-36{height:36px!important;line-height:36px!important;}
+
+/*设置内外边距*/
+.PaddL-0{padding-left:0px!important;}
+.PaddL-5{padding-left:5px!important;}
+.PaddL-10{padding-left:10px!important;}
+.PaddL-15{padding-left:15px!important;}
+.PaddL-20{padding-left:20px!important;}
+.PaddL-30{padding-left:30px!important;}
+.PaddR-0{padding-right:0px!important;}
+.PaddR-5{padding-right:5px!important;}
+.PaddR-10{padding-right:10px!important;}
+.PaddR-15{padding-right:15px!important;}
+.PaddR-20{padding-right:20px!important;}
+.PaddR-30{padding-right:30px!important;}
+.MargL-0{margin-left:0px!important;}
+.MargL-5{margin-left:5px!important;}
+.MargL-10{margin-left:10px!important;}
+.MargL-15{margin-left:15px!important;}
+.MargL-20{margin-left:20px!important;}
+.MargL-30{margin-left:30px!important;}
+.MargR-0{margin-right:0px!important;}
+.MargR-5{margin-right:5px!important;}
+.MargR-10{margin-right:10px!important;}
+.MargR-15{margin-right:15px!important;}
+.MargR-20{margin-right:20px!important;}
+.MargR-30{margin-right:30px!important;}
+.MargT-0{margin-top:0px!important;}
+.MargT-5{margin-top:5px!important;}
+.MargT-7{margin-top:7px!important;}
+.MargT-10{margin-top:10px!important;}
+.MargT-15{margin-top:15px!important;}
+.MargT-20{margin-top:20px!important;}
+.MargT-30{margin-top:30px!important;}
+.MargB-0{margin-bottom:0px!important;}
+.MargB-5{margin-bottom:5px!important;}
+.MargB-10{margin-bottom:10px!important;}
+.MargB-15{margin-bottom:15px!important;}
+.MargB-20{margin-bottom:20px!important;}
+.MargB-30{margin-bottom:30px!important;}
+
+/*设置浮动*/
+.F-left{float:left;}
+.F-right{float:right;}
+.clear{clear:both;zoom:1;}
+.clear:before,
+.clear:after {content:"";display:table;}
+.clear:after {clear:both;}
+/* For IE 6/7 (trigger hasLayout) */
+
+	
+/*借款信息*/
+.Loan-Info{}
+.Loan-Info h4{border-bottom:1px solid #dce8f1;padding-bottom:10px;}
+.Loan-Info-con{overflow:hidden;}
+.Loan-Info-con dl{ overflow:hidden;border-bottom:1px dotted #dce8f1;margin-bottom:0!important;width:100%;min-height:32px!important;line-height:32px!important;}
+.Loan-Info-con dl dt{float:left;width:25%; text-align:right;min-height:32px!important;line-height:32px!important;color:#667e99;font-weight:normal;}
+.Loan-Info-con dl dd{float:left;width:73%;padding-left:2%;ight:32px!important;line-height:32px!important;color:#777;}
+.Loan-Info-con dl dd .progress{margin-bottom:0!important;margin-top:7px;}
+
+#investorSearch{position:absolute;right:50px;top:4px;}
+#investorSearch input[type=text]{ position:relative;height:24px;top:2px;}
+
+/*合同模板*/
+.templateItem {color: #478fca; font-weight: normal; background-color: #f9f9f9; padding: 8px 15px; cursor: pointer; font-size: 14px;
+    margin-bottom: 8px; border: 1px solid #e5e5e5; border-left-width: 3px;}
+.edit-link { margin-left: 10px;}
+.templateItem .edit-link,.templateItem .icon-chevron-left {display: none;}
+.templateItem.active { border-left-color: #3983c2; background-color: #f0faff;}
+.templateItem.active .edit-link,.templateItem.active .icon-chevron-left { display: block;}
+.templateItem small { color: #999;}
+.templateItem:hover { background-color: #f0faff;}
+.templateItem .delete-template-link,.templateItem .set-default-link{font-size:12px;}
+#mediaContainer { border: 1px solid #ddd; min-height: 800px;}
+#pdfIFrame { min-height: 800px;}
+/*商户向用户转账*/
+#userTransferOutCard .info-item{margin-right:15px;}
+/*平台资金记录*/
+.userCard {border: 1px #ddd solid;margin-bottom:10px;}
+.userCard .card-header {overflow: hidden;border-bottom: 1px #ddd solid;background: #FAFAFA;background: rgba(236,236,236,.31);padding: 8px 10px;}
+.userCard .card-number {font-size: 130%;font-weight: 700;}
+.userCard .card-content {padding: 10px 15px;background:#fff;min-height:100px;}
+.userCard .card-account {font-size: 130%;font-weight: 700;letter-spacing: 2px;text-align: center;}
+.userCard .card-detail {margin: 5px 0;}
+.userCard .card-add-time {text-align: center;color: #777; margin-bottom:10px;}
+.userCard .card-account-number {text-align: center;font-size: 130%; font-weight: 700;font-family: bankcard;margin: 20px 0;color: #666;}
+
+/*用户信息*/
+.UserInfo-Header{}
+.profile-user-info{}
+.profile-info-row { min-height: 32px;position: relative;}
+.profile-info-name {position: absolute;width: 20%;text-align: right;padding: 6px 10px 6px 0;left: 0; top: 0; bottom: 0; 
+font-weight: normal;color: #667e99;background-color: transparent;border-top: 1px dotted #d5e4f1;}
+.profile-info-value {padding: 6px 4px 6px 6px;padding-left:20%;border-top: 1px dotted #d5e4f1;}
+.profile-info-value label{margin-bottom:0px;}
+.profile-info-value input[type=radio]+.text:before{  line-height: 15px;height: 15px;min-width: 15px;}
+.profile-info-row:first-child .profile-info-name { border-top: 0;}
+.profile-info-row:first-child .profile-info-value { border-top: 0;}
+.editable-click { border-bottom: 1px dashed #BBB; cursor: pointer; font-weight: normal;}
+.editable-click, a.editable-click, a.editable-click:hover { text-decoration: none; border-bottom: dashed 1px #0088cc;}
+.editable-empty, .editable-empty:hover, .editable-empty:focus {font-style: italic; color: #DD1144; /* border-bottom: none; */ text-decoration: none;}
+.editable-click:hover {border-color: #08c; color: #08c;}
+.editable-empty, .editable-empty:hover, .editable-empty:focus { font-style: italic; color: #DD1144; /* border-bottom: none; */ text-decoration: none;}
+.user-verify-status {font-size: 2em; padding-bottom: 10px;}
+
+#chunjiegift tr input{border: none;}
+
+
+/*还款明细*/
+.mx-tip-fa{position:relative; cursor: pointer;}
+.mx-tip-fa .tip-cell{position:absolute;left:-36px;top:32px;z-index:3;display:none;}
+.mx-tip-fa .tip-cell .content{margin-bottom:0px;padding:5px 0;min-width:150px;}
+.mx-tip-fa .tip-cell .content p{margin-bottom:5px;}
+.mx-tip-fa .tip-cell .x{position:relative;background:#fcfcfc;border:1px solid #e5e5e5;border-radius:3px;padding:0 5px;}
+.mx-tip-fa .tip-cell .y{position:absolute;color:#fcfcfc;left:60px;top:-17px;font-size:24px;}
+.mx-tip-fa .tip-cell .z{position:absolute;color:#e5e5e5;left:60px;top:-19px;font-size:24px;}
+
+
+/*个人详情图片*/
+.cbcontainer{}
+.ace-thumbnails{padding:0;overflow:hidden;}
+.ace-thumbnails li{list-style:none;float:left;width:170px;text-align:center;margin:20px 15px;}
+.ace-thumbnails li img{width:140px;height:140px;}
+.ace-thumbnails li .text{margin-top:10px;}
+.ace-thumbnails li .text span{height:22px;line-height:22px;overflow:hidden;width:170px;display:block;}
+
+
+
+
+
+
+
+/*#registerStep1,
+#registerStep2,
+#registerStep3,
+#registerStep4 {margin-top: -2000px;}*/
+.quickLoan{position: relative;}
+.registerStep {
+    margin: 0px auto 0;
+    min-height: 600px;
+    padding: 19px 29px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    position:relative;
+    width: 100%;
+}
+.registerStep .input-invalid {
+    border-color: #e9322d!important;
+    -webkit-box-shadow: 0 0 6px #f8b9b7!important;
+    -moz-box-shadow: 0 0 6px #f8b9b7!important;
+    box-shadow: 0 0 6px #f8b9b7!important;
+    color: #b94a48!important;
+}
+.registerStep .errorText {
+    margin-top: 39px;
+    color: #dd5a43!important;
+}
+.registerStep .errorText.inline {
+    margin-top: 0;
+    margin-left: 10px;
+}
+.registerStep .radio label,.registerStep .checkbox label{padding-left: 0}
+.registerStep .wizard{margin: 0 -29px;}
+
+#registerStep0 .btn{padding:10px 50px;}
+.buttonWrapper{text-align: center;padding-top:100px;}
+.buttonWrapper .buttonPanel{margin-top: 30px;}
+.buttonWrapper .buttonPanel .btn{font-size: 18px;}
+.center-align{text-align: center;}
+
+.uplanDetail .tab-content{border:0;box-shadow:0 0 0 0 }
+
+/*.table_spe .dataTables_filter{position:absolute;top:0;left:0;}
+.table_spe .dataTables_length{position:absolute;top:0;right:0;}
+.table_spe .table{margin:60px auto}*/

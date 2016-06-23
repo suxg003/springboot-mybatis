@@ -1,0 +1,32 @@
+<%@ page pageEncoding="UTF-8" %>
+<!--Basic Scripts-->
+<script src="/assets/js/jquery-2.0.3.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<!--Beyond Scripts-->
+<script src="/assets/js/beyond.min.js"></script>
+<script>
+    //设置当前菜单状态
+    $('.nav .submenu').css('display', '');
+    $('.nav .open').removeClass('open');
+    $('.nav .submenu>li').removeClass('active');
+    var menu_a = $('.nav .submenu a[href]');
+    for(var i=0; i<menu_a.length; i++){
+        var a = menu_a.get(i);
+        var pages = a.getAttribute('href')||'';
+        if(!pages) continue;
+        var pathname = window.location.pathname;
+        if(pathname.indexOf(pages)>=0){
+            $(a).closest('li').addClass('active');
+            $(a).closest('.submenu').css('display','block').closest('li').addClass('open');
+            if($(a).closest('.submenu').closest('li').closest('.submenu').length>0) {
+                $(a).closest('.submenu').closest('li').closest('.submenu').css('display','block').closest('li').addClass('open');
+            }
+            $('.nav').animate({
+                scrollTop: $(a).offset().top
+            }, 1000);
+            break;
+        }
+    }
+</script>
+

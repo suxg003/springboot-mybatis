@@ -1,0 +1,18 @@
+<meta name="description" content="Dashboard" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--Basic Styles-->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+<!--Fonts-->
+<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
+<!--Beyond styles-->
+<link href="/assets/css/beyond.min.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/animate.min.css" rel="stylesheet" />
+<link href="/assets/css/main.css" rel="stylesheet" />
+
+
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="/assets/js/skins.min.js"></script>

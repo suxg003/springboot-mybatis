@@ -1,0 +1,87 @@
+.row-title{
+    line-height: 17px;
+    margin: 10px 0;
+    padding: 9px 10px 9px 8px;
+    display: inline-block;
+    color: #646464;
+    font-weight: 400;
+    background-color: #fff;
+    position: relative;
+    -webkit-border-radius: 0 2px 2px 0;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 0 2px 2px 0;
+    -moz-background-clip: padding;
+    border-radius: 0 2px 2px 0;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,.3);
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+.wizard {
+    -webkit-border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 2px;
+    -moz-background-clip: padding;
+    border-radius: 2px;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 4px rgba(0,0,0,.3);
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.input-append, .input-prepend {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.input-prepend .add-on:first-child, .input-prepend .btn:first-child {
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+.input-prepend .add-on, .input-prepend .btn {
+    margin-right: -1px;
+}
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-image: url("../../img/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+}
+.icon-plus {
+    background-position: -408px -96px;
+}
+.icon-calendar {
+    background-position: -192px -120px;
+}
+
+.input-append .add-on, .input-prepend .add-on {
+    display: inline-block;
+    width: auto;
+    height: 28px;
+    min-width: 16px;
+    padding: 4px 5px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+.wizard{overflow:visible}
+.margin-top-30{margin-top:30px;}
+.creditInfoListWarp,.plansTableWarp{margin: 0 auto; width: 95%;}
+.daterangepicker{z-index:10000}
+.hide{display:none!important;}
+.errorText{color:#DD1144;}
+#matchCreditWarp .form-group{margin-bottom: 0}

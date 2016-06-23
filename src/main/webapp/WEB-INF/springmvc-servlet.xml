@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans      http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/task		http://www.springframework.org/schema/task/spring-task.xsd"
+       default-lazy-init="true">
+
+	<!-- <context:component-scan base-package="com.rmbbox" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>       
+	</context:component-scan> -->
+
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="mappingJackson2HttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="mappingJackson2HttpMessageConverter"/>
+                <!--  json转换器    -->
+            </list>
+        </property>
+    </bean>
+
+    <!--  启动加载异常处理的类，用于监听各模块中触发的异常  -->
+  <!--   <bean id="handlerExceptionResolver" class="com.rmbbox.common.exception.CommHandlerExceptionResolver">
+        <property name="defaultErrorView" value="error/exception"/>
+    </bean> -->
+    
+    <!--  国际化  -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    	<property name="basename">
+    		<value>i18n</value>
+    	</property>
+    </bean>
+
+    <mvc:default-servlet-handler />
+
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+  <!--   <mvc:interceptors>
+    
+    	<mvc:interceptor>
+			拦截登录外  其他所有所有 路径
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/login.do"/>
+			<bean class="com.rmbbox.manager.web.LoginInterceptor" />
+		</mvc:interceptor>
+        <bean class="com.rmbbox.manager.web.AuthenticationFilter"></bean>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+        
+
+    </mvc:interceptors> -->
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="defaultEncoding">
+    		<value>UTF-8</value>
+    	</property>
+    	<property name="maxUploadSize">
+    		<value>15728640</value>
+    	</property>
+    </bean>
+    
+    
+    
+    	<!-- 定时任务  开始 -->
+	<!-- 0 0/1 * * * ?  1分钟 -->
+	<!-- 0 0 1 * * ?  每天的凌晨1点 -->
+	<!-- */30 * * * * ?  30秒钟 -->
+	<!-- <task:scheduled-tasks>     
+	       <task:scheduled ref="loanScheduleTask" method="sheduleToOpen" cron="*/10 * * * * ?"/>   
+	</task:scheduled-tasks>  
+	<context:component-scan base-package="com.rmbbox.manager.task.LoanScheduleTask" /> -->
+    
+</beans>
