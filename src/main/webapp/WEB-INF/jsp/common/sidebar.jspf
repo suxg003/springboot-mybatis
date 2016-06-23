@@ -320,25 +320,25 @@
             </a>
 
             <ul class="submenu">
-            <cm:securityTag realmString="CONTRACT">
-            	<cm:securityTag privilegeString="CONTRACT_TEMPLATES">
+            <%-- <cm:securityTag realmString="CONTRACT">
+            	<cm:securityTag privilegeString="CONTRACT_TEMPLATES"> --%>
                 <li>
                     <a href="/contract/templates">
                         <span class="menu-text">合同管理</span>
                     </a>
                 </li>
-                </cm:securityTag>
-                </cm:securityTag>
-                <cm:securityTag realmString="SETTLEMENT">
-                	<cm:securityTag privilegeString="SETTLE_FINISHED">
+              <%--   </cm:securityTag>
+                </cm:securityTag> --%>
+             <%--    <cm:securityTag realmString="SETTLEMENT">
+                	<cm:securityTag privilegeString="SETTLE_FINISHED"> --%>
 	                <li>
 	                    <a href="/settle/finished">
 	                        <span class="menu-text">结算管理</span>
 	                    </a>
 	                </li>
-                	</cm:securityTag>
-                </cm:securityTag>
-                <cm:securityTag realmString="LOAN">
+                <%-- 	</cm:securityTag>
+                </cm:securityTag> 
+                <cm:securityTag realmString="LOAN">--%>
                 <li>
                     <a href="#" class="menu-dropdown">
                                     <span class="menu-text">
@@ -348,38 +348,38 @@
                     </a>
 
                     <ul class="submenu">
-                    <cm:securityTag privilegeString="POSTLOAN_TODAY">
+                   <%--  <cm:securityTag privilegeString="POSTLOAN_TODAY"> --%>
                         <li>
                             <a href="/postLoan/today">
                                 <i class="menu-icon fa fa-lightbulb-o"></i>
                                 <span class="menu-text">本日到账欠款</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="POSTLOAN_UNDUE">
+                       <%--  </cm:securityTag>
+                        <cm:securityTag privilegeString="POSTLOAN_UNDUE"> --%>
                         <li>
                             <a href="/postLoan/undue">
                                 <i class="menu-icon fa  fa-tags"></i>
                                 <span class="menu-text">尚未到期欠款</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="POSTLOAN_REPAYED">
+                       <%--  </cm:securityTag>
+                        <cm:securityTag privilegeString="POSTLOAN_REPAYED"> --%>
                         <li>
                             <a href="/postLoan/repayed">
                                 <i class="menu-icon fa fa-sun-o"></i>
                                 <span class="menu-text">已经还清欠款</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="POSTLOAN_OVERDUE">
+                        <%-- </cm:securityTag>
+                        <cm:securityTag privilegeString="POSTLOAN_OVERDUE"> --%>
                         <li>
                             <a href="/postLoan/overdue">
                                 <i class="menu-icon fa fa-file-text"></i>
                                 <span class="menu-text">逾期欠款列表</span>
                             </a>
                         </li>
-                        </cm:securityTag>
+                      <%--   </cm:securityTag> --%>
 <!--                         <li> -->
                             <%--<a href="/postLoan/breach">--%>
                                 <%--<i class="menu-icon fa fa-copy"></i>--%>
@@ -388,7 +388,7 @@
                         <%--</li>--%>
                     </ul>
                 </li>
-                </cm:securityTag>
+            <%--     </cm:securityTag> --%>
             </ul>
         </li>
       <%--   </cm:securityTag>
@@ -403,128 +403,128 @@
             </a>
 
             <ul class="submenu">
-            <cm:securityTag realmString="FUND">
+           <%--  <cm:securityTag realmString="FUND"> --%>
                 <li>
                     <a href="#" class="menu-dropdown">
                         <span class="menu-text">对账管理</span><i class="menu-expand"></i>
                     </a>
                     <ul class="submenu">
-                    <cm:securityTag privilegeString="FUND_RECONCILIATION_TRANSFER">
+                 <%--    <cm:securityTag privilegeString="FUND_RECONCILIATION_TRANSFER"> --%>
                         <li>
                             <a href="/fund/reconciliation/transfer">
                                 <i class="menu-icon fa fa-sign-in"></i>
                                 <span class="menu-text">商户向用户转账</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="FUND_RECONCILIATION_FUND">
+                        <%-- </cm:securityTag> --%>
+                      <%--   <cm:securityTag privilegeString="FUND_RECONCILIATION_FUND"> --%>
                         <li>
                             <a href="/fund/reconciliation/fund">
                                 <i class="menu-icon fa fa-list"></i>
                                 <span class="menu-text">平台资金记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="FUND_RECONCILIATION_THIRDPARTY">
+                     <%--    </cm:securityTag> --%>
+                       <%--  <cm:securityTag privilegeString="FUND_RECONCILIATION_THIRDPARTY"> --%>
                         <li>
                             <a href="/fund/reconciliation/thirdParty">
                                 <i class="menu-icon fa fa-list"></i>
                                 <span class="menu-text">平台资金充值与提现</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="FUND_RECONCILIATION_DEPOSIT">
+                       <%--  </cm:securityTag>
+                        <cm:securityTag privilegeString="FUND_RECONCILIATION_DEPOSIT"> --%>
                         <li>
                             <a href="/fund/reconciliation/deposit">
                                 <i class="menu-icon fa fa-list-alt"></i>
                                 <span class="menu-text">充值记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="FUND_EXPORT_RECORDS">
+                      <%--   </cm:securityTag>
+                        <cm:securityTag privilegeString="FUND_EXPORT_RECORDS"> --%>
                         <li>
                             <a href="/fund/exportRecords">
                                 <i class="menu-icon fa fa-list-alt"></i>
                                 <span class="menu-text">导入第三方充值记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="FUND_RECONCILIATION_INVEST">
+                       <%--  </cm:securityTag>
+                        <cm:securityTag privilegeString="FUND_RECONCILIATION_INVEST"> --%>
                         <li>
                             <a href="/fund/reconciliation/invest">
                                 <i class="menu-icon fa fa-outdent"></i>
                                 <span class="menu-text">投资记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="FUND_RECONCILIATION_WITHDRAW">
+                      <%--   </cm:securityTag>
+                        <cm:securityTag privilegeString="FUND_RECONCILIATION_WITHDRAW"> --%>
                         <li>
                             <a href="/fund/reconciliation/withdraw">
                                 <i class="menu-icon fa fa-file-text-o"></i>
                                 <span class="menu-text">提现记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="FUND_RECONCILIATION_REPAY">
+                       <%--  </cm:securityTag>
+                        <cm:securityTag privilegeString="FUND_RECONCILIATION_REPAY"> --%>
                         <li>
                             <a href="/fund/reconciliation/repay">
                                 <i class="menu-icon fa fa-file-o"></i>
                                 <span class="menu-text">回款记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
+                      <%--   </cm:securityTag> --%>
                     </ul>
                 </li>
-                </cm:securityTag>
-                <cm:securityTag realmString="WITHDRAW">
+              <%--   </cm:securityTag> --%>
+            <%--     <cm:securityTag realmString="WITHDRAW"> --%>
                 <li>
                     <a href="#" class="menu-dropdown">
                         <span class="menu-text">提现管理</span><i class="menu-expand"></i>
                     </a>
                     <ul class="submenu">
-                    <cm:securityTag privilegeString="WITHDRAW_UNTREATEDREQUEST">
+                <%--     <cm:securityTag privilegeString="WITHDRAW_UNTREATEDREQUEST"> --%>
                         <li>
                             <a href="/withdraw/untreatedRequest">
                                 <i class="menu-icon fa fa-warning"></i>
                                 <span class="menu-text">未处理请求</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="WITHDRAW_PROCESSING">
+                     <%--    </cm:securityTag>
+                        <cm:securityTag privilegeString="WITHDRAW_PROCESSING"> --%>
                         <li>
                             <a href="/withdraw/processing">
                                 <i class="menu-icon fa fa-spinner"></i>
                                 <span class="menu-text">处理中记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="WITHDRAW_IMPORT">
+                     <%--    </cm:securityTag>
+                        <cm:securityTag privilegeString="WITHDRAW_IMPORT"> --%>
                         <li>
                             <a href="/withdraw/import">
                                 <i class="menu-icon fa fa-sign-in"></i>
                                 <span class="menu-text">提现结果导入</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="WITHDRAW_CHECK">
+                      <%--   </cm:securityTag>
+                        <cm:securityTag privilegeString="WITHDRAW_CHECK"> --%>
                         <li>
                             <a href="/withdraw/check">
                                 <i class="menu-icon fa  fa-share-square"></i>
                                 <span class="menu-text">导入结果审核</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="WITHDRAW_QUERYWITHDRAWFAILED">
+                      <%--   </cm:securityTag>
+                        <cm:securityTag privilegeString="WITHDRAW_QUERYWITHDRAWFAILED"> --%>
                         <li>
                             <a href="/withdraw/queryWithdrawFailed">
                                 <i class="menu-icon fa fa-times-circle"></i>
                                 <span class="menu-text">提现失败列表</span>
                             </a>
                         </li>
-                        </cm:securityTag>
+                     <%--    </cm:securityTag> --%>
                     </ul>
                 </li>
-                </cm:securityTag>
+                	
                <%--   <cm:securityTag realmString="WITHDRAW">  权限暂无
                 <li>
                     <a href="#" class="menu-dropdown">
@@ -557,7 +557,7 @@
             </a>
 
             <ul class="submenu">
-            <cm:securityTag realmString="REWARD">
+          <%--   <cm:securityTag realmString="REWARD"> --%>
                 <li>
                     <a href="#" class="menu-dropdown">
                         <span class="menu-text">推荐管理</span>
@@ -574,23 +574,23 @@
                         </cm:securityTag>
                     </ul>
                 </li>
-			</cm:securityTag>
-			<cm:securityTag realmString="REWARD">
+		<%-- 	</cm:securityTag>
+			<cm:securityTag realmString="REWARD"> --%>
                 <li>
                     <a href="#" class="menu-dropdown">
                         <span class="menu-text">红包</span>
                         <i class="menu-expand"></i>
                     </a>
                     <ul class="submenu">
-                    <cm:securityTag privilegeString="REWARD_CREATEREWARD">
+                 <%--    <cm:securityTag privilegeString="REWARD_CREATEREWARD"> --%>
                         <li>
                             <a href="/reward/createreward">
                                 <i class="menu-icon fa fa-gift"></i>
                                 <span class="menu-text">发放红包记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
-                        <cm:securityTag privilegeString="USER_GIFTCARD">
+                      <%--   </cm:securityTag>
+                        <cm:securityTag privilegeString="USER_GIFTCARD"> --%>
                         <li>
                             <a href="/user/giftcard">
                                 <i class="menu-icon fa  fa-align-center"></i>
@@ -613,10 +613,10 @@
                                 <span class="menu-text">红包使用记录</span>
                             </a>
                         </li>
-                        </cm:securityTag>
+                      <%--   </cm:securityTag> --%>
                     </ul>
                 </li>
-				</cm:securityTag>
+				<%-- </cm:securityTag> --%>
             </ul>
         </li>
         <%-- </cm:securityTag> --%>
