@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta name="description" content="千金所测试平台管理系统"/>
+    <meta name="description" content="系统测试平台管理系统"/>
     <%@include file="../../common/head.jspf" %>
     <link href="/assets/css/quickLoanRequest.css" rel="stylesheet"/>
     <link href="/assets/css/dataTables.bootstrap.css" rel="stylesheet"/>

@@ -31,7 +31,7 @@
                 <a href="#" class="navbar-brand">
                     <small>
                         <%--<img src="/assets/img/logo.png" alt="" />--%>
-                        千金所测试平台
+                        系统测试平台
                     </small>
                 </a>
             </div>
