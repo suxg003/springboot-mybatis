@@ -32,7 +32,7 @@
             <li>
                 <a href="#" class="menu-dropdown">
                     <i class="menu-icon fa fa-pencil-square-o"></i>
-                    <span class="menu-text"> 诺曼底后台 </span>
+                    <span class="menu-text"> 诺曼底后台1111111 </span>
 
                     <i class="menu-expand"></i>
                 </a>
@@ -42,9 +42,17 @@
                         <li>
                             <a href="/nmdStaff/nmdStaffList">
                                 <i class="menu-icon fa fa-user"></i>
-                                <span class="menu-text">员工列表</span>
+                                <span class="menu-text">员工列表11111</span>
                             </a>
                         </li>
+                        
+                             <li>
+                            <a href="/periodic/periodiclist">
+                                <i class="menu-icon fa fa-user"></i>
+                                <span class="menu-text">嘻嘻嘻嘻嘻嘻嘻11111</span>
+                            </a>
+                        </li>
+                        
                  <%--    </cm:securityTag>
                     <cm:securityTag privilegeString="NMD_STAFF_LEVEL_LIST"> --%>
                         <li>

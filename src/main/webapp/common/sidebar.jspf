@@ -37,6 +37,13 @@
                                 <span class="menu-text">员工列表</span>
                             </a>
                         </li>
+                          <li>
+                            <a href="/periodic/periodiclist">
+                                <i class="menu-icon fa fa-periodic"></i>
+                                <span class="menu-text">数据列表</span>
+                            </a>
+                        </li>
+                        
                         <li>
                             <a href="/employee/roles">
                                 <i class="menu-icon fa fa-unlock-alt"></i>
@@ -72,6 +79,7 @@
                                 <span class="menu-text">企业用户</span>
                             </a>
                         </li>
+                        
                     </ul>
                 </li>
                 <li>

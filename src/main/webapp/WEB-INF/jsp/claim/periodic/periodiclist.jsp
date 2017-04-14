@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-        <title>非活期债权列表</title>
+        <title>数据列表</title>
         <%@include file="../../common/head.jspf"%>
         <link href="/assets/css/quickLoanRequest.css" rel="stylesheet" />
         <link href="/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
                 <!-- Page Header -->
                 <div class="page-header position-relative">
                     <div class="header-title">
-                        <h1>非活期债权列表</h1>
+                        <h1>数据列表</h1>
                     </div>
                     <!--Header Buttons-->
                     <div class="header-buttons">
@@ -84,19 +84,19 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="table-toolbar">
-                                <cm:securityTag privilegeString="CLAIM_FIXED_ADD">
+                               <%--  <cm:securityTag privilegeString="CLAIM_FIXED_ADD"> --%>
                                         <a onclick="showClaimBox()" data-target="#addClaimBox" href="javascript:void(0);" class="btn btn-default">
                                         <i class="fa fa-plus"></i> 增加债权
                                         </a>
                                         <a onclick="uploadCreditorInfo()" data-target="#singleEmployee" href="javascript:void(0);" class="btn btn-default">
                                         <i class="fa fa-upload"></i> 上传本地债权
                                         </a>
-                                        </cm:securityTag>
-                                        <cm:securityTag privilegeString="CLAIM_FIXED_IMPORT">
+                                   <%--      </cm:securityTag> --%>
+                                        <%-- <cm:securityTag privilegeString="CLAIM_FIXED_IMPORT"> --%>
                                         <a id="downclaimlist" href="/claimLoan/fixedLoanListExport" class="btn btn-default">
                                         <i class="fa fa-download"></i> 导出报表
                                         </a>
-                                        </cm:securityTag>
+                                   <%--      </cm:securityTag> --%>
                                 </div>
                             </div>
                         </div>
@@ -413,11 +413,11 @@
                         <input multiple id="uploadFileInput" type="file" name="uploadFileInput">
                     </form>
                     <div class="margin-top-20 text-center">
-                        <cm:securityTag privilegeString="UPLANLOAN_CREDITLIST">
+                   <%--      <cm:securityTag privilegeString="UPLANLOAN_CREDITLIST"> --%>
                             <button class="btn btn-submit btn-success" id="saveFileBtn">确定上传</button>
                             &nbsp;&nbsp;
                             <button data-dismiss="modal" class="btn btn-reset">取消</button>
-                        </cm:securityTag>
+                      <%--   </cm:securityTag> --%>
                     </div>
                 </div>
             </div>
