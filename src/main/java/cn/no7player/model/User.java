@@ -1,5 +1,8 @@
 package cn.no7player.model;
 
+import java.io.Serializable;
+
+
 /**
  * Created by zl on 2015/8/27.
  */
@@ -31,4 +34,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+ 
 }

@@ -59,7 +59,7 @@ public class HelloController {
 
     public ModelAndView claimProduct(HttpServletRequest request) {
 
-    return new ModelAndView("/claim/claimProduct/list-claimProduct");
+    return new ModelAndView("claim/claimProduct/list-claimProduct");
 
     }
     @RequestMapping(value=" reward/createreward")

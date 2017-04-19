@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.no7player.mapper.ClaimLoanMapper">
+
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+	`id`,
+  `cartype`,
+  `carnumber`,
+  `carpp`,
+  `carcjh`,
+  `persionid`,
+  `persionname`,
+  `gctime`,
+  `addessid`,
+  `phone`,
+  `createtime`,
+  `updatetime` 
+</sql>
+<!-- 
+<insert id="insert" parameterType="cn.no7player.model.ClaimLoan">
+	INSERT INTO  `carinfo` (
+  `cartype`,
+  `carnumber`,
+  `carpp`,
+  `carcjh`,
+  `persionid`,
+  `persionname`,
+  `gctime`,
+  `addessid`,
+  `phone`
+) 
+VALUES
+  (
+    
+   #{cartype},
+    #{carnumber},
+    #{carpp},
+    #{carcjh},
+    #{persionid},
+    #{persionname},
+   #{gctime},
+    #{addessid},
+    #{phone}
+  ) 
+
+
+</insert>
+
+ -->
+<!-- <insert id="insertBatch"  parameterType="java.util.List">
+INSERT INTO  `carinfo` (
+  `cartype`,
+  `carnumber`,
+  `carpp`,
+  `carcjh`,
+  `persionid`,
+  `persionname`,
+  `gctime`,
+  `addessid`,
+  `phone`
+) 
+VALUES
+ 
+  <foreach collection="list" item="item" index="index" separator="," >  
+        (#{item.cartype},#{item.carnumber},#{item.carpp},#{item.carcjh},#{item.persionid},#{item.persionname},#{item.gctime},#{item.addessid},#{item.phone})  
+    </foreach> 
+  
+</insert> -->
+</mapper>

@@ -1,4 +1,5 @@
 package cn.no7player;
+ 
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
@@ -24,7 +25,7 @@ import javax.sql.DataSource;
 @EnableAutoConfiguration
 @SpringBootApplication
 @ComponentScan
-@MapperScan("cn.no7player.mapper")
+@MapperScan("cn.no7player.mapper*")
 public class Application extends SpringBootServletInitializer {
 
 	@Override
@@ -37,13 +38,13 @@ public class Application extends SpringBootServletInitializer {
 
 	private static Logger logger = Logger.getLogger(Application.class);
 
-	@Bean
+/*	@Bean
 	@ConfigurationProperties(prefix = "spring.datasource")
 	public DataSource dataSource() {
 		return new org.apache.tomcat.jdbc.pool.DataSource();
-	}
+	}*/
 
-	@Bean
+/*	@Bean
 	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
 
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
@@ -54,17 +55,15 @@ public class Application extends SpringBootServletInitializer {
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/*.xml"));
 
         return sqlSessionFactoryBean.getObject();
-    }
+    }*/
 
-    @Bean
+/*    @Bean
     public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource());
-    }
+    }*/
 
 
-    /**
-     * Start
-     */
+ 
     public static void main(String[] args) {
     	ConfigurableApplicationContext cac =SpringApplication.run(Application.class, args);
         logger.info("SpringBoot Start Success");
@@ -77,3 +76,4 @@ public class Application extends SpringBootServletInitializer {
     }
     }
 
+ 

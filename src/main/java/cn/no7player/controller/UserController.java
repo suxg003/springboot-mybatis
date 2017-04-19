@@ -7,6 +7,8 @@ import cn.no7player.service.UserService;
 
 import java.util.List;
 
+import javax.servlet.annotation.MultipartConfig;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by zl on 2015/8/27.
  */
 @Controller
+//@RequestMapping("/user")
+//@MultipartConfig(maxFileSize = 1024*1024*1024, maxRequestSize = 1024*1024*1024)
 public class UserController {
 
 	private Logger logger = Logger.getLogger(UserController.class);
@@ -51,7 +55,7 @@ public class UserController {
 	public ModelAndView loginUser(String loginName, String password) {
 		ModelAndView modelAndView = new ModelAndView("login");
 		if ("admin".equals(loginName) && "admin".equals(password)) {
-			modelAndView.setViewName("index");
+			modelAndView.setViewName("/WEB-INF/jsp/index");
 
 		} else {
 			modelAndView.addObject("errors", "用户名或者密码错误");
@@ -77,6 +81,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/claimLoan/importFileFixedLoan")
+	
 	public RestData importFileFixedLoan(MultipartFile file) throws Exception {
 		RestData resultMsg = new RestData();
 
