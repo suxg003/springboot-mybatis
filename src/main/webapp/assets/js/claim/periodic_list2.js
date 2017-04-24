@@ -108,7 +108,60 @@ function showClaimBox(ele,read) {
     if (ele) {
         //编辑债权信息
         var empId = $(ele).attr("data-empid");
-   
+        $.ajax({
+            url: '/claimLoan/editByLoanId/'+empId,
+            type: "get",
+            dataType: 'json',
+            success: function(data) {
+                context = {
+                    loanId:data.loanId,
+                    loanerName:data.loanerName,
+                    loanerCardNo:data.loanerCardNo,
+                    loanerAddress:data.loanerAddress,
+                    loanerProfession:data.loanerProfession,
+                    loanerPurpose:data.loanerPurpose,
+                    contractId:data.contractId,
+                    loanAmount:data.loanAmount,
+                    loanType:data.loanType,
+                    loanRepaymentType:data.loanRepaymentType,
+                    loanRate:(data.loanRate*100).toFixed(2),
+                    cashDate:data.cashDate,
+                    loanTimeLimit:data.loanTimeLimit,
+                    manageFee:(data.manageFee*100).toFixed(2),
+                    mediatorLoginName:data.mediatorLoginName,
+                    loanSource:data.loanSource,
+                    flagBanned:data.flagBanned
+                };
+                html = template(context);
+
+                if(read){
+                    bootbox.dialog({
+                        message: html,
+                        title: "查看债权",
+                        className: "modal-darkorange"
+                    });
+                    $("#addClaimForm").find("input,select").attr("disabled","disabled").css({"background":"none","border":"none"});
+                    $("#form_btns").hide();
+                }else{
+                    bootbox.dialog({
+                        message: html,
+                        title: "编辑债权",
+                        className: "modal-darkorange"
+                    });
+                    //return false;
+                    addClaimForm();
+
+                    $('.date-picker').datepicker({
+                        'language': 'cn',
+                        startDate: new Date(moment),
+                        endDate: new Date(moment)
+                    });
+                }
+               
+                $('#loanRate option:contains("'+data.loanRate/100+'")').attr('selected','selected');
+                
+            }
+        });
         
     } else {
         html = template(context);
@@ -280,7 +333,7 @@ $('#saveFileBtn').on('click', function () {
             contentType: false,
             type: 'POST',
             success: function (data) {
-//                var data = eval('('+data+')');
+                var data = eval('('+data+')');
                 
                 console.log("result===" + data);
                 
@@ -608,7 +661,26 @@ function allHandler(type){
     }else{
         turl = '/claimLoan/fixedDisable?loanId='+ids;
     }
-
+    $.ajax({
+        url: turl,
+        type: 'POST',
+        dataType: 'json',
+        data: {},
+        success:function(data){
+            //var data = eval('('+data+')');
+            console.log(data);
+            
+            if(data.success){
+            	Notify(data.comment, 'top-right', '5000', 'success', 'fa-check', true);
+            }else{
+            	Notify(data.comment, 'top-right', '5000', 'danger', 'fa-check', true);
+            }
+            curClaimList();
+        },
+        error:function(error){
+            console.log(error);
+        }
+    });
 }
 
 $('#link_audit_all').bind('click', function(){

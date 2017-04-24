@@ -22,9 +22,9 @@
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
                         <li><i class="fa fa-home"></i> <a href="/">首页</a></li>
-                        <li class="active">债权项目</li>
-                        <li class="active">债权管理</li>
-                        <li class="active">非活期债权列表</li>
+                        <li class="active">列表项目</li>
+                        <li class="active">列表管理</li>
+                        <li class="active">数据列表</li>
                     </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -55,7 +55,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row" style="color:#fff;text-align:center">
-                                    <div class="col-sm-6">
+                      <!--               <div class="col-sm-6">
                                         <div class="databox databox-lg radius-bordered databox-shadowed" style="height:auto!important;">
                                             <div class="well bordered-left bordered-sky bg-white" style="margin-bottom: 0px;">
                                                 <div>
@@ -69,8 +69,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
+                                    </div> -->
+                    <!--                 <div class="col-sm-6">
                                         <div class="databox databox-lg radius-bordered databox-shadowed">
                                             <div class="well bordered-left bordered-sky bg-white">
                                                 <h4 class="darkgray">可用债权总价值</h4>
@@ -80,16 +80,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="table-toolbar">
                                <%--  <cm:securityTag privilegeString="CLAIM_FIXED_ADD"> --%>
                                         <a onclick="showClaimBox()" data-target="#addClaimBox" href="javascript:void(0);" class="btn btn-default">
-                                        <i class="fa fa-plus"></i> 增加债权
+                                        <i class="fa fa-plus"></i> 增加
                                         </a>
                                         <a onclick="uploadCreditorInfo()" data-target="#singleEmployee" href="javascript:void(0);" class="btn btn-default">
-                                        <i class="fa fa-upload"></i> 上传本地债权
+                                        <i class="fa fa-upload"></i> 上传本地数据
                                         </a>
                                    <%--      </cm:securityTag> --%>
                                         <%-- <cm:securityTag privilegeString="CLAIM_FIXED_IMPORT"> --%>
@@ -125,10 +125,10 @@
                                             </div>
                                         </div>
                                         <div class="control-group pull-left">
-                                        <cm:securityTag privilegeString="CLAIM_FIXED_LIST">
+                                     <%--    <cm:securityTag privilegeString="CLAIM_FIXED_LIST"> --%>
                                             <button class="btn btn-small btn-primary"
                                             id="searchRechargeHistory">查询</button>
-                                            </cm:securityTag>
+                                            <%-- </cm:securityTag> --%>
 
                                         </div>
                                     </div>
@@ -168,24 +168,17 @@
                                                             <span class="text bold">全选</span>
                                                         </label>
                                                     </th>
-                                                    <th>合同编号</th>
-                                                    <th>借款人姓名</th>
-                                                    <th>身份证号</th>
-                                                    <th>居间人</th>
-                                                    <th>原始债权价值</th>
-                                                    <th>可用债权价值</th>
-                                                    <th>债权状态</th>
-                                                    <th>借款金额</th>
-                                                    <th>月还本金</th>
-                                                    <th>账单日</th>
-                                                    <th>借款期数</th>
-                                                    <th>可用期数</th>
-                                                    <th>放款日期</th>
-                                                    <th>首期还款日期</th>
-                                                    <th>末期还款日期</th>
-                                                    <th>月利率</th>
-                                                    <th>月管理费率</th>
-                                                    <th>启用</th>
+                                                    <th>id</th>
+                                                    <th>type</th>
+                                                    <th>biannumber</th>
+                                                    <th>pp</th>
+                                                    <th>cjh</th>
+                                                    <th>pid</th>
+                                                    <th>pname</th>
+                                                    <th>gctime</th>
+                                                    <th>addessid</th>
+                                                    <th>phone</th>
+                                                    <th>createtime</th>
                                                     <th>操作</th>
                                                 </tr>
                                             </thead>
