@@ -365,25 +365,18 @@ function curClaimList() {
         //     }
         // },
         "aoColumns": [
-            {"mData": "loanId", "sDefaultContent": ""},   //0 全选
-            {"mData": "contractId", "sDefaultContent": ""},   //1 合同编号
-            {"mData": "loanerName", "sDefaultContent": ""},   //2 借款人姓名
-            {"mData": "loanerCardNo", "sDefaultContent": ""},   //3 身份证号
-            {"mData": "mediatorUserName", "sDefaultContent": ""},   //4 局间人
-            {"mData": "loanAmount", "sDefaultContent": ""},   //5 原始债权价值
-            {"mData": "remainAmount", "sDefaultContent": ""},   //6 可用债权价值
-            {"mData": "loanStatus", "sDefaultContent": ""},   //7 债权状态
-            {"mData": "loanAmount", "sDefaultContent": ""},   //8 借款金额
-            {"mData": "remainPeriod", "sDefaultContent": ""},   //9 月还本金
-            {"mData": "billdateType", "sDefaultContent": ""},   //10 账单日
-            {"mData": "loanTimeLimit", "sDefaultContent": ""},   //11 借款期数
-            {"mData": "remainPeriod", "sDefaultContent": ""},   //12 可用期数
-            {"mData": "cashDate", "sDefaultContent": ""},   //13 放款日期
-            {"mData": "repayStartDate", "sDefaultContent": ""},   //14 首期还款日期
-            {"mData": "dueDate", "sDefaultContent": ""},   //15 末期还款日期
-            {"mData": "loanRate", "sDefaultContent": ""},   //16 月利率
-            {"mData": "manageFee", "sDefaultContent": ""},   //17 月管理费率
-            {"mData": "loanId", "sDefaultContent": ""},   //18 启用
+            {"mData": "id", "sDefaultContent": ""},   //0 全选
+            {"mData": "cartype", "sDefaultContent": ""},   //1 合同编号
+            {"mData": "carnumber", "sDefaultContent": ""},   //2 借款人姓名
+            {"mData": "carpp", "sDefaultContent": ""},   //3 身份证号
+            {"mData": "carcjh", "sDefaultContent": ""},   //4 局间人
+            {"mData": "persionid", "sDefaultContent": ""},   //5 原始债权价值
+            {"mData": "persionname", "sDefaultContent": ""},   //6 可用债权价值
+            {"mData": "gctime", "sDefaultContent": ""},   //7 债权状态
+            {"mData": "addessid", "sDefaultContent": ""},   //8 借款金额
+            {"mData": "phone", "sDefaultContent": ""},   //9 月还本金
+            {"mData": "createtime", "sDefaultContent": ""},   //10 账单日
+            
             {"mData": null, "sDefaultContent": ""}    //19 操作
         ],
         "aoColumnDefs": [{
@@ -416,54 +409,6 @@ function curClaimList() {
                             "mRender": function (data, type, full) {
                                 return '<div class="checkbox"><label><input type="checkbox" class="check_each" name="recordInfos" data-id="' + full.loanId + '" /><span class="text">&nbsp;</span></label></div>';
                             }
-                        },{
-                            "bSortable": true,
-                            "aTargets": [7],
-                            "mRender": function (data, type, full) {
-                                switch(data){
-                                    case 'RESERVE':
-                                      return "备用";
-                                      break;
-                                    case 'MATCHING':
-                                      return "匹配中";
-                                      break;
-                                    case 'CLOSED':
-                                      return "已结束";
-                                      break;
-                                    default:
-                                      return "备用";
-                                }
-                            }
-                        }, {
-                            "bSortable": true,
-                            "aTargets": [13],
-                            "mRender": function (data, type, row) {
-                                return new Date(data).Format("yyyy-MM-dd");
-                            }
-                        },{
-                            "bSortable": true,
-                            "aTargets": [14],
-                            "mRender": function (data, type, row) {
-                                return new Date(data).Format("yyyy-MM-dd");
-                            }
-                        },{
-                            "bSortable": true,
-                            "aTargets": [15],
-                            "mRender": function (data, type, row) {
-                                return new Date(data).Format("yyyy-MM-dd");
-                            }
-                        }, {
-                            "bSortable": false,
-                            "aTargets": [16],
-                            "mRender": function (data, type, row) {
-                                return (data*100).toFixed(2) + "%";
-                            }
-                        }, {
-                            "bSortable": false,
-                            "aTargets": [17],
-                            "mRender": function (data, type, row) {
-                                return (data*100).toFixed(3) + "%";
-                            }
                         }],
         fnCreatedRow: function(nRow, aData, iDataIndex) {
             var id = aData.loanId,isOpen = aData.flagBanned,loanStatus = aData.loanStatus ,openHtml,handlerHtml = '<a id="detail_btn" data-empid="'+id+'" class="btn btn-danger btn-xs delete" title="查看详情" onclick="showClaimBox(this,true)" style="margin-right:10px"><i class="fa fa-file"></i> 查看详情</a>';
@@ -481,8 +426,8 @@ function curClaimList() {
             if(isOpen == true && loanStatus == "RESERVE"){
                 handlerHtml += '<a id="edit_btn" data-empid="'+id+'"  class="btn btn-info btn-xs edit" title="编辑" onclick="showClaimBox(this,false)"><i class="fa fa-edit"></i> 编辑</a>';
             }
-            $('td:eq(18)', nRow).html(openHtml);
-            $('td:eq(19)', nRow).html(handlerHtml);
+            $('td:eq(9)', nRow).html(openHtml);
+            $('td:eq(9)', nRow).html(handlerHtml);
         },
         "sAjaxSource": "/claimLoan/fixedLoanList",
         "fnServerData": function (sSource, aoData, fnCallback, oSettings) {

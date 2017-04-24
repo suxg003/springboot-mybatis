@@ -4,6 +4,7 @@ import cn.no7player.controller.util.ImportCredtorUtils;
 import cn.no7player.model.CLoan;
 import cn.no7player.model.ClaimLoan;
 import cn.no7player.model.User;
+import cn.no7player.service.IClaimLoanService;
 import cn.no7player.service.UserService;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.plugins.Page;
 
 /**
  * Created by zl on 2015/8/27.
@@ -37,7 +39,8 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-
+	@Autowired
+	private IClaimLoanService claimLoanServiceImpl;
 	@RequestMapping("/getUserInfo")
 	@ResponseBody
 	public User getUserInfo() {
@@ -124,8 +127,8 @@ public class UserController {
 
 			}
 			System.out.println("###############" + list.size());
-			//TODO   插入数据见junit，缺少查询和导出---------
-			
+			//TODO  批量插入数据
+			claimLoanServiceImpl.insertBatch(list);
 			resultMsg.setSuccess(0);
 
 			resultMsg.setComment("文件中的数据已全部导入！一共" + list.size() + "条，成功导入" + list.size() + "条\r\n");
@@ -145,30 +148,16 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/claimLoan/fixedLoanList")
+	@ResponseBody
 	  public JSONObject fixedLoanList(String dateRange,String dateFilter,
 	    		@RequestParam(value = "sSearch", required = false) String search,
 	    		@RequestParam(value = "iDisplayStart") Integer startRow,
-	    		@RequestParam(value = "iDisplayLength") Integer pageSize){
-		
-		ClaimLoan cl=new ClaimLoan();
-		cl.setAddessid("111");
-		cl.setCarcjh("222");
-		cl.setCarnumber("333");
-		cl.setCarpp("pp");
-		cl.setCartype("111");
-		cl.setGctime("123");
-		cl.setPersionid("555");
-		cl.setPersionname("ccccc");
-		cl.setPhone("1888888");
-		
-		List<ClaimLoan> list=new ArrayList<ClaimLoan>();
-	    
-		list.add(cl);
-		
+	    		@RequestParam(value = "iDisplayLength") Integer pageSize,ClaimLoan claimLoan){
+		Page<ClaimLoan> page=claimLoanServiceImpl.selectPage(new Page<ClaimLoan>(startRow, pageSize), null); 
 		JSONObject jsonObject = new JSONObject();
-			jsonObject.put("aaData", list);
-	        jsonObject.put("iTotalRecords", 10);
-	        jsonObject.put("iTotalDisplayRecords", 20);
+			jsonObject.put("aaData", page.getRecords());
+	        jsonObject.put("iTotalRecords", page.getSize());
+	        jsonObject.put("iTotalDisplayRecords", 10);
 			return jsonObject;
 	    }
 }
