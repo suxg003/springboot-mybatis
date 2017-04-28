@@ -1,23 +1,28 @@
 package cn.no7player.controller;
 
+import cn.no7player.controller.util.DateUtils;
+import cn.no7player.controller.util.ExportExcelUtil;
 import cn.no7player.controller.util.ImportCredtorUtils;
-import cn.no7player.model.CLoan;
 import cn.no7player.model.ClaimLoan;
 import cn.no7player.model.User;
 import cn.no7player.service.IClaimLoanService;
 import cn.no7player.service.UserService;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -160,4 +165,55 @@ public class UserController {
 	        jsonObject.put("iTotalDisplayRecords", 10);
 			return jsonObject;
 	    }
+	
+	/**
+	 * 
+	 * fixedLoanListExport:导出列表. 
+	 * TODO(这里描述这个方法适用条件 – 可选)
+	 * TODO(这里描述这个方法的执行流程 – 可选)
+	 * TODO(这里描述这个方法的使用方法 – 可选)
+	 * TODO(这里描述这个方法的注意事项 – 可选)
+	 *
+	 * @author: suxg
+	 * @param dateRange
+	 * @param dateFilter
+	 * @param search
+	 * @param response
+	 * @since JDK 1.8
+	 */
+	  @RequestMapping(value = "/claimLoan/fixedLoanListExport")
+//    @PrivilegeRequired(Privilege.CLAIM_FIXED_IMPORT)
+    public void fixedLoanListExport(String dateRange,String dateFilter,
+    		@RequestParam(value = "sSearch", required = false) String search,HttpServletResponse response){
+    	
+    	Page<ClaimLoan> pageInfo = new Page<ClaimLoan>();
+    	Date startDate = null;
+		Date endDate = null;
+		if (StringUtils.isNotEmpty(dateRange)) {
+			startDate = DateTimeFormat.forPattern("yyyy-MM-dd").parseDateTime(dateRange.split(" - ")[0]).toDate();
+			endDate = DateUtils.getOneDayRange(dateRange.split(" - ")[1])[1];
+		}
+    	String currDateStr = new LocalDate().toString("yyyyMMdd");
+    	String fileName = currDateStr+".xls";
+    	List<Map<String, Object>> listMap = new ArrayList<Map<String,Object>>();
+    	pageInfo = claimLoanServiceImpl.selectPage(new Page<ClaimLoan>(1, 100000), null);
+//    	pageInfo = claimLoanService.queryClaimByLoanTypeLoanRecords(startDate, endDate,dateFilter,search,ClaimType.FIXED);
+    	claimLoanServiceImpl.exportClaimExcel(pageInfo.getRecords(), listMap);
+    	defineExcelTemplate(currDateStr, fileName, listMap, response);
+    }
+    public static void defineExcelTemplate (String sheetStr,String fileName,List<Map<String, Object>> listMap ,HttpServletResponse response){
+    	String[] sheet= {sheetStr};
+		String[][] heards = {{"1","2","3","4","5"}};
+		String[][] keys = {{"id","cartype","carnumber","carpp","carcjh","persionid"}};
+		Collection<?>[] listC = new Collection[]{listMap};
+ 	ExportExcelUtil.exportExcel(fileName, response, listC, heards,keys,sheet);
+    }
+	
+	
+	
+	
+	
+	
+	
+	
 }

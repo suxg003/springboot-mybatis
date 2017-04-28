@@ -9,6 +9,9 @@
 package cn.no7player.service;
 
 
+import java.util.List;
+import java.util.Map;
+
 import com.baomidou.framework.service.IService;
 import com.baomidou.framework.service.ISuperService;
 
@@ -26,6 +29,8 @@ import cn.no7player.model.ClaimLoan;
  * @see 	 
  */
 public interface IClaimLoanService extends ISuperService<ClaimLoan> {
+
+	void exportClaimExcel(List<ClaimLoan> records, List<Map<String, Object>> listMap);
 
 }
 
