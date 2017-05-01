@@ -85,9 +85,9 @@
                                 <div class="clearfix"></div>
                                 <div class="table-toolbar">
                                <%--  <cm:securityTag privilegeString="CLAIM_FIXED_ADD"> --%>
-                                        <a onclick="showClaimBox()" data-target="#addClaimBox" href="javascript:void(0);" class="btn btn-default">
+                                  <!--       <a onclick="showClaimBox()" data-target="#addClaimBox" href="javascript:void(0);" class="btn btn-default">
                                         <i class="fa fa-plus"></i> 增加
-                                        </a>
+                                        </a> -->
                                         <a onclick="uploadCreditorInfo()" data-target="#singleEmployee" href="javascript:void(0);" class="btn btn-default">
                                         <i class="fa fa-upload"></i> 上传本地数据
                                         </a>
@@ -103,7 +103,7 @@
                         <!---->
                         <div class="well">
                             <div class="table-toolbar">
-                                <div id="investRecordHistory"
+                   <%--              <div id="investRecordHistory"
                                     style="padding-bottom: 15px; height: 30px;">
                                     <div class="control-group  pull-left">
                                         <label for="date-range-picker" class="control-label pull-left"
@@ -125,13 +125,13 @@
                                             </div>
                                         </div>
                                         <div class="control-group pull-left">
-                                     <%--    <cm:securityTag privilegeString="CLAIM_FIXED_LIST"> --%>
+                                        <cm:securityTag privilegeString="CLAIM_FIXED_LIST">
                                             <button class="btn btn-small btn-primary"
                                             id="searchRechargeHistory">查询</button>
-                                            <%-- </cm:securityTag> --%>
+                                            </cm:securityTag>
 
                                         </div>
-                                    </div>
+                                    </div> --%>
                                     <div class="control-group  pull-right">
                                         <div class="buttons-preview">
                                         <cm:securityTag privilegeString="CLAIM_FIXED_BATCH_OPEN">
