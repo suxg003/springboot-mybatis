@@ -365,6 +365,7 @@ function curClaimList() {
         //     }
         // },
         "aoColumns": [
+            {"mData": "id", "sDefaultContent": ""},             
             {"mData": "id", "sDefaultContent": ""},   //0 全选
             {"mData": "cartype", "sDefaultContent": ""},   //1 合同编号
             {"mData": "carnumber", "sDefaultContent": ""},   //2 借款人姓名
@@ -375,39 +376,16 @@ function curClaimList() {
             {"mData": "gctime", "sDefaultContent": ""},   //7 债权状态
             {"mData": "addessid", "sDefaultContent": ""},   //8 借款金额
             {"mData": "phone", "sDefaultContent": ""},   //9 月还本金
-            {"mData": "createtime", "sDefaultContent": ""},   //10 账单日
             
-            {"mData": null, "sDefaultContent": ""}    //19 操作
+//           {"mData": null, "sDefaultContent": ""}    //19 操作
         ],
-        "aoColumnDefs": [{
-				            "bSortable": false,
-				            "aTargets": [5],
-				            "mRender": function (data, type, full) {
-				                return '<span class="red">￥' + formatAmount(data)+'</span>';
-				            }
-				        },{
-				            "bSortable": false,
-				            "aTargets": [6],
-				            "mRender": function (data, type, full) {
-				                return '<span class="red">￥' + formatAmount(data)+'</span>';
-				            }
-				        },{
-				            "bSortable": false,
-				            "aTargets": [8],
-				            "mRender": function (data, type, full) {
-				                return '<span class="red">￥' + formatAmount(data)+'</span>';
-				            }
-				        },{
-				            "bSortable": false,
-				            "aTargets": [9],
-				            "mRender": function (data, type, full) {
-				                return '<span class="red">￥0</span>';
-				            }
-				        },{
+        "aoColumnDefs": [
+				        
+				         {
                             "bSortable": false,
                             "aTargets": [0],
                             "mRender": function (data, type, full) {
-                                return '<div class="checkbox"><label><input type="checkbox" class="check_each" name="recordInfos" data-id="' + full.loanId + '" /><span class="text">&nbsp;</span></label></div>';
+                                return '<div class="checkbox"><label><input type="checkbox" class="check_each" name="recordInfos" data-id="' + full.id + '" /><span class="text">&nbsp;</span></label></div>';
                             }
                         }],
         fnCreatedRow: function(nRow, aData, iDataIndex) {
@@ -426,8 +404,8 @@ function curClaimList() {
             if(isOpen == true && loanStatus == "RESERVE"){
                 handlerHtml += '<a id="edit_btn" data-empid="'+id+'"  class="btn btn-info btn-xs edit" title="编辑" onclick="showClaimBox(this,false)"><i class="fa fa-edit"></i> 编辑</a>';
             }
-            $('td:eq(9)', nRow).html(openHtml);
-            $('td:eq(9)', nRow).html(handlerHtml);
+       /*     $('td:eq(9)', nRow).html(openHtml);
+            $('td:eq(9)', nRow).html(handlerHtml);*/
         },
         "sAjaxSource": "/claimLoan/fixedLoanList",
         "fnServerData": function (sSource, aoData, fnCallback, oSettings) {

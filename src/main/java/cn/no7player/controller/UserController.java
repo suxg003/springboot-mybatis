@@ -162,7 +162,7 @@ public class UserController {
 		JSONObject jsonObject = new JSONObject();
 			jsonObject.put("aaData", page.getRecords());
 	        jsonObject.put("iTotalRecords", page.getSize());
-	        jsonObject.put("iTotalDisplayRecords", 10);
+	        jsonObject.put("iTotalDisplayRecords", page.getTotal());
 			return jsonObject;
 	    }
 	
@@ -203,8 +203,8 @@ public class UserController {
     }
     public static void defineExcelTemplate (String sheetStr,String fileName,List<Map<String, Object>> listMap ,HttpServletResponse response){
     	String[] sheet= {sheetStr};
-		String[][] heards = {{"1","2","3","4","5"}};
-		String[][] keys = {{"id","cartype","carnumber","carpp","carcjh","persionid"}};
+		String[][] heards = {{"编号","汽车类型","车牌号","品牌","车架号","身份证号","姓名","购车日期","联系地址","手机号"}};
+		String[][] keys = {{"id","cartype","carnumber","carpp","carcjh","persionid","persionname","gctime","addessid","phone"}};
 		Collection<?>[] listC = new Collection[]{listMap};
  	ExportExcelUtil.exportExcel(fileName, response, listC, heards,keys,sheet);
     }

@@ -133,7 +133,7 @@ public class ExportExcelUtil {
                                         dataMap.get(keyss[k])).toString());
                             } else if(dataMap.get(keyss[k]) instanceof Integer){
                             	cellContext.setCellValue((Integer)dataMap.get(keyss[k]));
-                            }else if (dataMap.get(keyss[k]) instanceof Number) {
+                            }else if (dataMap.get(keyss[k]) instanceof Number &&keyss[k]!="id") {
                                 DecimalFormat df2 = (DecimalFormat) DecimalFormat
                                         .getInstance();
                                 df2.applyPattern("0.00");

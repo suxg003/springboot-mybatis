@@ -169,17 +169,17 @@
                                                         </label>
                                                     </th>
                                                     <th>id</th>
-                                                    <th>type</th>
-                                                    <th>biannumber</th>
-                                                    <th>pp</th>
-                                                    <th>cjh</th>
-                                                    <th>pid</th>
-                                                    <th>pname</th>
-                                                    <th>gctime</th>
-                                                    <th>addessid</th>
-                                                    <th>phone</th>
-                                                    <th>createtime</th>
-                                                    <th>操作</th>
+                                                    <th>汽车类型</th>
+                                                    <th>车牌号</th>
+                                                    <th>品牌</th>
+                                                    <th>车架号</th>
+                                                    <th>身份证号</th>
+                                                    <th>姓名</th>
+                                                    <th>购车日期</th>
+                                                    <th>联系地址</th>
+                                                    <th>手机号</th>
+                                                   <!--   <th>createtime</th>
+                                                    <th>操作</th> --> 
                                                 </tr>
                                             </thead>
                                             <tbody>
